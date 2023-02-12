@@ -36,7 +36,7 @@ def make_a_mark(event):
         how_close_label.config(text='Colder!!!')
     else:
         how_close_label.config(text='Freezing!!!!')
-    if counter % 10 == 0:
+    if counter % 20 == 0:
         parrot_button.pack(side=TOP, padx=5, pady=5)
         x_treasure_coordinates_label.config(text=xr)
         y_treasure_coordinates_label.config(text=yr)
@@ -45,12 +45,12 @@ def make_a_mark(event):
     canvas.create_oval(event.x - 10, event.y - 10, event.x + 10, event.y + 10, fill='NavajoWhite4')
 
 
-def fly_parrot(event):
+def fly_parrot():
     canvas.create_oval(xr - 80, yr - 80, xr + 80, yr + 80, outline='black')
     parrot_button.pack_forget()
 
 
-def start_again(event):
+def start_again():
     next_treasure_button.pack_forget()
     global counter, xc, yc, xr, yr
     counter = 0
